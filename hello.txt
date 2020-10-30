@@ -1,0 +1,409 @@
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git init
+Initialized empty Git repository in C:/Users/binia/OneDrive/Desktop/test2/.git/
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git remote add origin https://github.com/biniamhk/example1.git
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/biniamhk/example1.git'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/biniamhk/example1.git'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git  push - u origin main
+error: src refspec u does not match any
+error: src refspec origin does not match any
+error: src refspec main does not match any
+error: failed to push some refs to '-'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git  push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/biniamhk/example1.git'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git  push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/biniamhk/example1.git'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git branch -M main
+error: refname refs/heads/master not found
+fatal: Branch rename failed
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git add .
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git commit -m "biniam"
+[master (root-commit) 077a4bc] biniam
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 hello.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git push -u master
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git push -u main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (master)
+$ git branch -M main
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git remote add origin origin https://github.com/biniamhk/example1.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 202 bytes | 101.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/biniamhk/example1.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ echo "list of files to be ignored">>.gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ echo "hello ignored file">>bin.a
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        bin.a
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git add .gitignore
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git commit -m "adding gitignore"
+[main bfc17a5] adding gitignore
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git push -u origin
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 311 bytes | 311.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/biniamhk/example1.git
+   077a4bc..bfc17a5  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git branch developer
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git checkout developer
+Switched to branch 'developer'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ echo "hello new branch">>developer.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git status
+On branch developer
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        developer.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        developer.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git checkout developer
+Switched to branch 'developer'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git add .
+warning: LF will be replaced by CRLF in developer.txt.
+The file will have its original line endings in your working directory
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git commit -m "developer adds"
+[developer 35ffc17] developer adds
+ 1 file changed, 1 insertion(+)
+ create mode 100644 developer.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ echo >>bini
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ echo >> .gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ ^C
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ echo >>README.md
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ echo "hello" >>README1.md
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ open README1.md
+bash: open: command not found
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> developer
+
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git branch feauture
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git checkout
+M       .gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git checkout feauture
+Switched to branch 'feauture'
+M       .gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (feauture)
+$ git branch -d feauture
+error: Cannot delete branch 'feauture' checked out at 'C:/Users/binia/OneDrive/D
+esktop/test2'
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (feauture)
+$ git checkout main
+Switched to branch 'main'
+M       .gitignore
+Your branch is up to date with 'origin/main'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git branch -d feauture
+error: The branch 'feauture' is not fully merged.
+If you are sure you want to delete it, run 'git branch -D feauture'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git merge feauture
+Updating bfc17a5..35ffc17
+Fast-forward
+ developer.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 developer.txt
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git branch -d feauture
+Deleted branch feauture (was 35ffc17).
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git checkout developer
+Switched to branch 'developer'
+M       .gitignore
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git status
+On branch developer
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        README1.md
+        bin.a
+        bini
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git add .
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in README1.md.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in bin.a.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in bini.
+The file will have its original line endings in your working directory
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git commit -m "final "
+[developer 450a1e0] final
+ 5 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100644 README.md
+ create mode 100644 README1.md
+ create mode 100644 bin.a
+ create mode 100644 bini
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git push -u origin
+fatal: The current branch developer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin developer
+
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git push --set-upstream origin developer
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 714 bytes | 357.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'developer' on GitHub by visiting:
+remote:      https://github.com/biniamhk/example1/pull/new/developer
+remote:
+To https://github.com/biniamhk/example1.git
+ * [new branch]      developer -> developer
+Branch 'developer' set up to track remote branch 'developer' from 'origin'.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (developer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/biniamhk/example1.git
+   bfc17a5..35ffc17  main -> main
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git fetch
+error: cannot open .git/FETCH_HEAD: Permission denied
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git pull
+Already up to date.
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git push
+Everything up-to-date
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git merge developer
+Updating 35ffc17..450a1e0
+Fast-forward
+ .gitignore | 2 --
+ README.md  | 1 +
+ README1.md | 1 +
+ bin.a      | 1 +
+ bini       | 1 +
+ 5 files changed, 4 insertions(+), 2 deletions(-)
+ create mode 100644 README.md
+ create mode 100644 README1.md
+ create mode 100644 bin.a
+ create mode 100644 bini
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/biniamhk/example1.git
+   35ffc17..450a1e0  main -> main
+
+binia@DESKTOP-U6K2PQV MINGW64 ~/OneDrive/Desktop/test2 (main)
+$
